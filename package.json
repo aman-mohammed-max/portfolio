@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && cp .assetsignore.dist dist/.assetsignore",
     "preview": "astro preview"
   },
   "dependencies": {
