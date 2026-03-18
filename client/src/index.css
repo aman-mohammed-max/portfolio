@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Medusa Dark Design Tokens ───────────────────────────────────── */
+:root {
+  --m-bg-subtle:    rgba(24,  24,  27,  1);   /* #18181B — outermost bg   */
+  --m-bg-base:      rgba(33,  33,  36,  1);   /* #212124 — content areas  */
+  --m-bg-component: rgba(39,  39,  42,  1);   /* #27272A — cards / hover  */
+  --m-bg-hover:     rgba(39,  39,  42,  1);
+  --m-bg-field:     rgba(255,255,255, .04);   /* form fields              */
+
+  --m-border:       rgba(255,255,255, .08);   /* subtle grid lines        */
+  --m-border-strong:rgba(255,255,255, .16);   /* stronger borders         */
+
+  --m-fg-base:      rgba(244,244,245,  1);    /* #F4F4F5                  */
+  --m-fg-subtle:    rgba(161,161,170,  1);    /* #A1A1AA                  */
+  --m-fg-muted:     rgba(113,113,122,  1);    /* #71717A                  */
+  --m-fg-blue:      rgba(96, 165,250,  1);    /* #60A5FA                  */
+  --m-fg-green:     rgba(52, 211,153,  1);    /* #34D399                  */
+
+  --m-tag-blue-bg:  rgba(23, 37, 84, 1);
+  --m-tag-blue-txt: rgba(147,197,253, 1);
+  --m-tag-blue-bdr: rgba(30, 58,138, 1);
+  --m-tag-grn-bg:   rgba(2,  44, 34, 1);
+  --m-tag-grn-txt:  rgba(52, 211,153, 1);
+  --m-tag-grn-bdr:  rgba(6,  78, 59, 1);
+  --m-tag-neu-bg:   rgba(255,255,255, .08);
+  --m-tag-neu-txt:  rgba(212,212,216, 1);
+  --m-tag-neu-bdr:  rgba(255,255,255, .06);
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--m-bg-subtle);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--m-fg-base);
+  background: var(--m-bg-subtle);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Custom scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--m-bg-subtle); }
+::-webkit-scrollbar-thumb { background: var(--m-border-strong); border-radius: 4px; }
+
+/* ── Medusa grid border overlay ───────────────────────────────────── */
+.m-panel {
+  background: var(--m-bg-base);
+  border: 1px solid var(--m-border);
+}
+.m-panel-subtle {
+  background: var(--m-bg-subtle);
+  border: 1px solid var(--m-border);
+}
+.m-card {
+  background: var(--m-bg-component);
+  border: 1px solid var(--m-border);
+  border-radius: 8px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.m-card:hover {
+  border-color: var(--m-border-strong);
+}
+
+/* ── Grid‑line layout ─────────────────────────────────────────────── */
+.m-grid-layout {
+  display: grid;
+  border-left: 1px solid var(--m-border);
+}
+.m-grid-col {
+  border-right: 1px solid var(--m-border);
+  border-bottom: 1px solid var(--m-border);
+}
+
+/* ── Section header row (like Medusa admin page titles) ───────────── */
+.m-page-header {
+  border-bottom: 1px solid var(--m-border);
+  padding: 24px 0 20px;
+}
+.m-section-row {
+  border-bottom: 1px solid var(--m-border);
+  padding: 20px 0;
+}
+
+/* ── Label / breadcrumb text ──────────────────────────────────────── */
+.m-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--m-fg-muted);
+  font-family: "Inter", sans-serif;
+}
+.m-label-mono {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  color: var(--m-fg-muted);
+}
+
+/* ── Tags ─────────────────────────────────────────────────────────── */
+.m-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid var(--m-tag-neu-bdr);
+  background: var(--m-tag-neu-bg);
+  color: var(--m-tag-neu-txt);
+}
+.m-tag-blue {
+  border-color: var(--m-tag-blue-bdr);
+  background: var(--m-tag-blue-bg);
+  color: var(--m-tag-blue-txt);
+}
+.m-tag-green {
+  border-color: var(--m-tag-grn-bdr);
+  background: var(--m-tag-grn-bg);
+  color: var(--m-tag-grn-txt);
+}
+
+/* ── Input fields ─────────────────────────────────────────────────── */
+.m-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--m-border-strong);
+  background: var(--m-bg-field);
+  color: var(--m-fg-base);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.m-input::placeholder { color: var(--m-fg-muted); }
+.m-input:focus {
+  border-color: var(--m-fg-blue);
+  box-shadow: 0 0 0 3px rgba(96,165,250,.15);
+}
+textarea.m-input { resize: none; line-height: 1.6; }
+
+/* ── Buttons ──────────────────────────────────────────────────────── */
+.m-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid transparent;
+}
+.m-btn-primary {
+  background: var(--m-fg-base);
+  color: var(--m-bg-subtle);
+  border-color: var(--m-fg-base);
+}
+.m-btn-primary:hover { background: rgba(244,244,245,.88); }
+.m-btn-secondary {
+  background: transparent;
+  color: var(--m-fg-subtle);
+  border-color: var(--m-border-strong);
+}
+.m-btn-secondary:hover {
+  background: var(--m-bg-component);
+  color: var(--m-fg-base);
+}
+
+/* ── Skill bar ────────────────────────────────────────────────────── */
+.m-skill-bar {
+  height: 2px;
+  background: var(--m-border-strong);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.m-skill-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--m-fg-blue);
+  transition: width 1.1s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── Timeline ─────────────────────────────────────────────────────── */
+.m-timeline-line {
+  position: absolute;
+  left: 14px;
+  top: 28px;
+  bottom: 0;
+  width: 1px;
+  background: var(--m-border-strong);
+}
+.m-timeline-dot {
+  position: absolute;
+  left: 8px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--m-fg-blue);
+  background: var(--m-bg-subtle);
+  z-index: 10;
+}
+
+/* ── Animations ───────────────────────────────────────────────────── */
+@keyframes fade-up  { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+@keyframes fade-in  { from{opacity:0} to{opacity:1} }
+@keyframes blink    { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes float    { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+@keyframes marquee  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+.anim-up   { animation: fade-up  .6s ease forwards; }
+.anim-in   { animation: fade-in  .5s ease forwards; }
+.anim-blink{ animation: blink 1s step-end infinite; }
+.anim-float{ animation: float 3s ease-in-out infinite; }
+.anim-marquee{ animation: marquee 35s linear infinite; }

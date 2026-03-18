@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
+import { Navbar } from "../components/portfolio/Navbar";
+import { Hero } from "../components/portfolio/Hero";
+import { About } from "../components/portfolio/About";
+import { Skills } from "../components/portfolio/Skills";
+import { Projects } from "../components/portfolio/Projects";
+import { Experience } from "../components/portfolio/Experience";
+import { Contact } from "../components/portfolio/Contact";
+import { Footer } from "../components/portfolio/Footer";
+---
+<Base>
+  <div style={{ minHeight: "100vh", background: "var(--m-bg-subtle)" }}>
+    <Navbar client:load />
+    <main style={{ paddingTop: 0 }}>
+      <Hero client:load />
+      <About />
+      <Skills client:load />
+      <Projects client:load />
+      <Experience />
+      <Contact client:load />
+    </main>
+    <Footer client:load />
+  </div>
+</Base>

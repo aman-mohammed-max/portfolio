@@ -1,0 +1,48 @@
+---
+const {
+  title = "Aman Mohammed — Builder • Developer • Exploring Business",
+  description = "Independent builder working with JavaScript and TypeScript, experimenting with systems, runtimes, and business ideas through real projects.",
+  canonical = "https://amanm.space/",
+} = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aman Mohammed",
+  jobTitle: "Independent Builder",
+  url: "https://amanm.space/",
+  sameAs: ["https://www.linkedin.com/in/aman-mohammed-b4001822b/"],
+  worksFor: {
+    "@type": "Organization",
+    name: "Towlips",
+  },
+};
+---
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://amanm.space/og.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://amanm.space/og.svg" />
+
+    <link rel="icon" href="/favicon.png" />
+    <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
