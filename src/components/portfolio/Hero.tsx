@@ -33,7 +33,7 @@ export function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "100vh",
+        minHeight: "auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
