@@ -33,7 +33,7 @@ export function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "auto",
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -94,22 +94,11 @@ export function Hero() {
       {/* Content grid — Medusa admin content layout */}
       <div style={{ flex: 1, background: "var(--m-bg-subtle)" }}>
         <div
-          style={{
-            maxWidth: 1080,
-            margin: "0 auto",
-            padding: "0 20px",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            borderLeft: "1px solid var(--m-border)",
-          }}
+          className="grid-hero"
+          style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}
         >
           {/* Left panel */}
-          <div
-            style={{
-              borderRight: "1px solid var(--m-border)",
-              padding: "32px 28px 32px 0",
-            }}
-          >
+          <div className="grid-hero-left">
             <p className="m-label" style={{ marginBottom: 16 }}>About</p>
             <p
               style={{
@@ -131,7 +120,7 @@ export function Hero() {
           </div>
 
           {/* Right panel */}
-          <div style={{ padding: "32px 0 32px 28px" }}>
+          <div className="grid-hero-right">
             <p className="m-label" style={{ marginBottom: 16 }}>Contact & Links</p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 24 }}>
