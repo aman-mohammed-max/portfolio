@@ -11,16 +11,16 @@ import { Contact } from "../components/portfolio/Contact";
 import { Footer } from "../components/portfolio/Footer";
 ---
 <Base>
-  <div style={{ minHeight: "100vh", background: "var(--m-bg-subtle)" }}>
-    <Navbar client:load />
-    <main style={{ paddingTop: 0 }}>
-      <Hero client:load />
-      <About />
-      <Skills client:load />
-      <Projects client:load />
-      <Experience />
-      <Contact client:load />
+  <div style="min-height: 100vh; background: var(--m-bg-subtle);">
+    <Navbar client:only="react" />
+    <main>
+      <Hero client:only="react" />
+      <About client:only="react" />
+      <Skills client:only="react" />
+      <Projects client:only="react" />
+      <Experience client:only="react" />
+      <Contact client:only="react" />
     </main>
-    <Footer client:load />
+    <Footer client:only="react" />
   </div>
 </Base>
