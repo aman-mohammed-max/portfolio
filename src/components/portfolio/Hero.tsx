@@ -6,17 +6,16 @@ import { profile } from "../../control/profile";
 
 function ProfileArt() {
   return (
-    <img
-      src="/aman.png"
-      alt="Stylized portrait illustration"
-      width={240}
-      height={300}
-      loading="lazy"
-      className="h-[260px] w-[220px] object-cover md:h-[300px] md:w-[240px]"
-      style={{
-        filter: "grayscale(1) sepia(0.25) hue-rotate(190deg) saturate(1.2) contrast(0.9) brightness(0.95)",
-      }}
-    />
+    <div className="hero-portrait-shell">
+      <img
+        src="/aman.png"
+        alt="Stylized portrait illustration"
+        width={260}
+        height={320}
+        loading="lazy"
+        className="hero-portrait-img"
+      />
+    </div>
   );
 }
 
@@ -220,7 +219,7 @@ export function Hero() {
 
       <style>{`
         @media (max-width: 640px) {
-          section#hero .hero-portrait { margin-top: 12px; }
+          section#hero .hero-portrait { margin-top: 12px; justify-self: center; }
           section#hero [style*="grid-template-columns"] {
             grid-template-columns: 1fr !important;
           }
@@ -232,6 +231,27 @@ export function Hero() {
           section#hero [style*="padding: 32px 0"] {
             padding-left: 0 !important;
           }
+        }
+
+        .hero-portrait-shell {
+          display: grid;
+          place-items: center;
+          padding: 10px;
+          border-radius: 12px;
+          border: 1px solid var(--m-border);
+          background: var(--m-bg-base);
+        }
+        .hero-portrait-img {
+          width: 240px;
+          height: 300px;
+          object-fit: cover;
+          filter: grayscale(1) sepia(0.25) hue-rotate(190deg) saturate(1.2) contrast(0.9) brightness(0.95);
+        }
+        @media (min-width: 1024px) {
+          .hero-portrait { justify-self: end; }
+        }
+        @media (max-width: 640px) {
+          .hero-portrait-img { width: 220px; height: 280px; }
         }
       `}</style>
     </section>
