@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Settings, Github } from "lucide-react";
+import { Menu, X, Github, Sun, Moon } from "lucide-react";
 import logoSrc from "../../assets/logo.svg";
 
 const navItems = [
@@ -13,8 +13,13 @@ const navItems = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
+    try {
+      const current = document.documentElement.getAttribute("data-theme");
+      if (current === "light") setTheme("light");
+    } catch (_) {}
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -26,6 +31,15 @@ export function Navbar() {
     document.querySelectorAll("section[id]").forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    try {
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    } catch (_) {}
+  };
 
   return (
     <header
@@ -98,6 +112,26 @@ export function Navbar() {
 
         {/* Right: actions */}
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <button
+            onClick={toggleTheme}
+            style={{
+              width: 28,
+              height: 28,
+              borderRadius: 6,
+              border: "1px solid var(--m-border-strong)",
+              background: "transparent",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "var(--m-fg-muted)",
+              cursor: "pointer",
+              transition: "all 0.15s",
+            }}
+            title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={13} /> : <Moon size={13} />}
+          </button>
           <a
             href="https://github.com"
             target="_blank"
