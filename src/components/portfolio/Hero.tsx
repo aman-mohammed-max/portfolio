@@ -4,6 +4,30 @@ import { SiGithub } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 import { profile } from "../../control/profile";
 
+function ProfileArt() {
+  return (
+    <div className="relative flex items-center justify-center">
+      <div
+        className="pointer-events-none absolute -inset-8 rounded-full blur-2xl"
+        style={{
+          background: "radial-gradient(circle, rgba(96,165,250,0.12), transparent 70%)",
+        }}
+      />
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 shadow-[0_18px_45px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-[1.03]">
+        <img
+          src="/aman.png"
+          alt="Stylized portrait illustration of Aman"
+          width={240}
+          height={300}
+          loading="lazy"
+          className="h-[260px] w-[220px] object-cover grayscale-[20%] saturate-75 contrast-90 md:h-[300px] md:w-[240px]"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-blue-500/15 via-transparent to-blue-400/10 mix-blend-screen" />
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   const [idx, setIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -53,40 +77,49 @@ export function Hero() {
             maxWidth: 1080,
             margin: "0 auto",
             padding: "28px 20px 24px",
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+            alignItems: "center",
+            gap: 24,
           }}
         >
-          <p className="m-label" style={{ marginBottom: 10 }}>{profile.label}</p>
-          <h1
-            style={{
-              fontSize: "clamp(36px, 6vw, 60px)",
-              fontWeight: 600,
-              letterSpacing: "-0.04em",
-              color: "var(--m-fg-base)",
-              margin: 0,
-              lineHeight: 1.1,
-            }}
-          >
-            {profile.name}
-          </h1>
-          <div
-            style={{
-              marginTop: 12,
-              height: 28,
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
-            }}
-          >
-            <span
+          <div>
+            <p className="m-label" style={{ marginBottom: 10 }}>{profile.label}</p>
+            <h1
               style={{
-                fontFamily: "Roboto Mono, monospace",
-                fontSize: 14,
-                color: "var(--m-fg-blue)",
+                fontSize: "clamp(36px, 6vw, 60px)",
+                fontWeight: 600,
+                letterSpacing: "-0.04em",
+                color: "var(--m-fg-base)",
+                margin: 0,
+                lineHeight: 1.1,
               }}
             >
-              {displayed}
-              <span className="anim-blink" style={{ color: "var(--m-fg-blue)" }}>▎</span>
-            </span>
+              {profile.name}
+            </h1>
+            <div
+              style={{
+                marginTop: 12,
+                height: 28,
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "Roboto Mono, monospace",
+                  fontSize: 14,
+                  color: "var(--m-fg-blue)",
+                }}
+              >
+                {displayed}
+                <span className="anim-blink" style={{ color: "var(--m-fg-blue)" }}>▎</span>
+              </span>
+            </div>
+          </div>
+          <div className="hero-portrait">
+            <ProfileArt />
           </div>
         </div>
       </div>
@@ -195,6 +228,7 @@ export function Hero() {
 
       <style>{`
         @media (max-width: 640px) {
+          section#hero .hero-portrait { margin-top: 12px; }
           section#hero [style*="grid-template-columns"] {
             grid-template-columns: 1fr !important;
           }
