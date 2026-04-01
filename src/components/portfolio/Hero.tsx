@@ -6,25 +6,17 @@ import { profile } from "../../control/profile";
 
 function ProfileArt() {
   return (
-    <div className="relative flex items-center justify-center">
-      <div
-        className="pointer-events-none absolute -inset-8 rounded-full blur-2xl"
-        style={{
-          background: "radial-gradient(circle, rgba(96,165,250,0.12), transparent 70%)",
-        }}
-      />
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 shadow-[0_18px_45px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-[1.03]">
-        <img
-          src="/aman.png"
-          alt="Stylized portrait illustration of Aman"
-          width={240}
-          height={300}
-          loading="lazy"
-          className="h-[260px] w-[220px] object-cover grayscale-[20%] saturate-75 contrast-90 md:h-[300px] md:w-[240px]"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-blue-500/15 via-transparent to-blue-400/10 mix-blend-screen" />
-      </div>
-    </div>
+    <img
+      src="/aman.png"
+      alt="Stylized portrait illustration"
+      width={240}
+      height={300}
+      loading="lazy"
+      className="h-[260px] w-[220px] object-cover md:h-[300px] md:w-[240px]"
+      style={{
+        filter: "grayscale(1) sepia(0.25) hue-rotate(190deg) saturate(1.2) contrast(0.9) brightness(0.95)",
+      }}
+    />
   );
 }
 
