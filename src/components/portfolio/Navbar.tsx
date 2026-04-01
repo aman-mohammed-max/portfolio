@@ -114,23 +114,17 @@ export function Navbar() {
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <button
             onClick={toggleTheme}
+            className="m-btn m-btn-secondary"
             style={{
-              width: 28,
+              padding: "5px 10px",
+              fontSize: 12,
               height: 28,
-              borderRadius: 6,
-              border: "1px solid var(--m-border-strong)",
-              background: "transparent",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--m-fg-muted)",
-              cursor: "pointer",
-              transition: "all 0.15s",
             }}
             title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={13} /> : <Moon size={13} />}
+            Theme
           </button>
           <a
             href="https://github.com"
