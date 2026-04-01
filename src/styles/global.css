@@ -32,12 +32,44 @@
   --m-tag-neu-bdr:  rgba(255,255,255, .06);
 }
 
+/* ── Medusa Light Design Tokens ──────────────────────────────────── */
+html[data-theme="light"] {
+  --m-bg-subtle:    #f7f7f8;
+  --m-bg-base:      #ffffff;
+  --m-bg-component: #f3f4f6;
+  --m-bg-hover:     #eef0f3;
+  --m-bg-field:     rgba(0,0,0,.03);
+
+  --m-border:       rgba(17,24,39,.08);
+  --m-border-strong:rgba(17,24,39,.16);
+
+  --m-fg-base:      #111827;
+  --m-fg-subtle:    #4b5563;
+  --m-fg-muted:     #6b7280;
+  --m-fg-blue:      #3b82f6;
+  --m-fg-green:     #10b981;
+
+  --m-tag-blue-bg:  #dbeafe;
+  --m-tag-blue-txt: #1d4ed8;
+  --m-tag-blue-bdr: #bfdbfe;
+  --m-tag-grn-bg:   #dcfce7;
+  --m-tag-grn-txt:  #15803d;
+  --m-tag-grn-bdr:  #bbf7d0;
+  --m-tag-neu-bg:   #f3f4f6;
+  --m-tag-neu-txt:  #374151;
+  --m-tag-neu-bdr:  #e5e7eb;
+}
+
 /* ── Reset & Base ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
   background: var(--m-bg-subtle);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
 }
 
 body {
