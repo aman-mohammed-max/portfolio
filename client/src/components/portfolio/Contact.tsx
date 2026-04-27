@@ -3,7 +3,7 @@ import { Mail, MapPin, ArrowRight, CheckCircle, Send } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
 const links = [
-  { icon: SiGithub,  label: "GitHub",   sub: "@aman-mohammed",                   href: "https://github.com" },
+  { icon: SiGithub,  label: "GitHub",   sub: "@aman-mohammed-max",                   href: "https://github.com/aman-mohammed-max" },
   { icon: SiLinkedin,label: "LinkedIn", sub: "linkedin.com/in/aman-mohammed-b4001822b", href: "https://www.linkedin.com/in/aman-mohammed-b4001822b/" },
   { icon: Mail,      label: "Email",    sub: "aman.mohammed979@gmail.com",         href: "mailto:aman.mohammed979@gmail.com" },
 ];

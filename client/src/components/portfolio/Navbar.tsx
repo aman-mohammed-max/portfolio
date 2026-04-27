@@ -99,7 +99,7 @@ export function Navbar() {
         {/* Right: actions */}
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <a
-            href="https://github.com"
+            href="https://github.com/aman-mohammed-max"
             target="_blank"
             rel="noopener noreferrer"
             style={{

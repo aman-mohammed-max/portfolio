@@ -146,7 +146,7 @@ export function Hero() {
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 24 }}>
               {[
                 { icon: Mail, label: "aman.mohammed979@gmail.com", href: "mailto:aman.mohammed979@gmail.com" },
-                { icon: SiGithub, label: "github.com/aman-mohammed", href: "https://github.com" },
+                { icon: SiGithub, label: "github.com/aman-mohammed-max", href: "https://github.com/aman-mohammed-max" },
                 { icon: SiLinkedin, label: "linkedin.com/in/aman-mohammed-b4001822b", href: "https://www.linkedin.com/in/aman-mohammed-b4001822b/" },
               ].map(({ icon: Icon, label, href }) => (
                 <a

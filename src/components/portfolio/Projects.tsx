@@ -141,7 +141,7 @@ export function Projects() {
           }}
         >
           <a
-            href="https://github.com/aman-mohammed"
+            href="https://github.com/aman-mohammed-max"
             target="_blank"
             rel="noopener noreferrer"
             className="m-btn m-btn-secondary"

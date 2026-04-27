@@ -127,7 +127,7 @@ export function Navbar() {
             Theme
           </button>
           <a
-            href="https://github.com"
+            href="https://github.com/aman-mohammed-max"
             target="_blank"
             rel="noopener noreferrer"
             style={{

@@ -37,7 +37,7 @@ export function Footer() {
         {/* Social icons */}
         <div style={{ display: "flex", gap: 6 }}>
           {[
-            { icon: SiGithub,  href: "https://github.com",             label: "GitHub" },
+            { icon: SiGithub,  href: "https://github.com/aman-mohammed-max",             label: "GitHub" },
             { icon: FaLinkedinIn,href: "https://www.linkedin.com/in/aman-mohammed-b4001822b/", label: "LinkedIn" },
             { icon: Mail,      href: "mailto:connect@amanm.space", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (

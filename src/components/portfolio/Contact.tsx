@@ -4,7 +4,7 @@ import { SiGithub } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 
 const links = [
-  { icon: SiGithub,  label: "GitHub",   sub: "@aman-mohammed",                   href: "https://github.com" },
+  { icon: SiGithub,  label: "GitHub",   sub: "@aman-mohammed-max",                   href: "https://github.com/aman-mohammed-max" },
   { icon: FaLinkedinIn,label: "LinkedIn", sub: "linkedin.com/in/aman-mohammed-b4001822b", href: "https://www.linkedin.com/in/aman-mohammed-b4001822b/" },
   { icon: Mail,      label: "Email",    sub: "connect@amanm.space",         href: "mailto:connect@amanm.space" },
 ];

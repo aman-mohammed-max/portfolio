@@ -150,7 +150,7 @@ export function Hero() {
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 24 }}>
               {[
                 { icon: Mail, label: "connect@amanm.space", href: "mailto:connect@amanm.space" },
-                { icon: SiGithub, label: "github.com/aman-mohammed", href: "https://github.com" },
+                { icon: SiGithub, label: "github.com/aman-mohammed-max", href: "https://github.com/aman-mohammed-max" },
                 { icon: FaLinkedinIn, label: "linkedin.com/in/aman-mohammed-b4001822b", href: "https://www.linkedin.com/in/aman-mohammed-b4001822b/" },
               ].map(({ icon: Icon, label, href }) => (
                 <a
