@@ -114,7 +114,7 @@ export function Navbar() {
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <button
             onClick={toggleTheme}
-            className="m-btn m-btn-secondary"
+            className="m-btn m-btn-secondary theme-toggle-btn"
             style={{
               padding: "5px 10px",
               fontSize: 12,
@@ -124,7 +124,7 @@ export function Navbar() {
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={13} /> : <Moon size={13} />}
-            Theme
+            <span className="theme-label">Theme</span>
           </button>
           <a
             href="https://github.com/aman-mohammed-max"
@@ -179,6 +179,17 @@ export function Navbar() {
         @media (max-width: 700px) {
           .hidden-mobile { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
+        }
+
+        @media (max-width: 560px) {
+          .theme-toggle-btn {
+            width: 28px !important;
+            padding: 0 !important;
+          }
+
+          .theme-label {
+            display: none !important;
+          }
         }
       `}</style>
 
