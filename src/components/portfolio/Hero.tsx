@@ -13,6 +13,8 @@ function ProfileArt() {
         width={260}
         height={320}
         loading="lazy"
+        draggable={false}
+        onContextMenu={(event) => event.preventDefault()}
         className="hero-portrait-img"
       />
     </div>
@@ -245,6 +247,9 @@ export function Hero() {
           width: 240px;
           height: 300px;
           object-fit: cover;
+          user-select: none;
+          -webkit-user-drag: none;
+          pointer-events: none;
           filter: grayscale(1) sepia(0.25) hue-rotate(190deg) saturate(1.2) contrast(0.9) brightness(0.95);
         }
         @media (min-width: 1024px) {
