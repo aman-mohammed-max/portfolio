@@ -25,7 +25,7 @@ export function Footer() {
       >
         {/* Logo + name */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <img src={logoSrc} alt="Logo" style={{ width: 13, height: 13, filter: "invert(1)", opacity: 0.5 }} />
+          <img src={logoSrc.src} alt="Logo" style={{ width: 13, height: 13, filter: "invert(1)", opacity: 0.5 }} />
           <span style={{ fontSize: 12, color: "var(--m-fg-muted)" }}>Aman Mohammed</span>
         </div>
 

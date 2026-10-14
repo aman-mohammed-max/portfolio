@@ -240,13 +240,13 @@ export function Contact() {
 
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 640px) {
           #contact [style*="280px 1fr"] { grid-template-columns: 1fr !important; }
-          #contact [style*="border-right: 1px solid"] { border-right: none !important; border-bottom: 1px solid var(--m-border) !important; }
+          #contact [style*="border-right: 1px solid"], #contact [style*="border-right:1px solid"] { border-right: none !important; border-bottom: 1px solid var(--m-border) !important; }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }

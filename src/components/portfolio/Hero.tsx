@@ -8,11 +8,11 @@ function ProfileArt() {
   return (
     <div className="hero-portrait-shell">
       <img
-        src="/aman.png"
+        src="/aman.webp"
         alt="Stylized portrait illustration"
-        width={260}
-        height={320}
-        loading="lazy"
+        width={240}
+        height={300}
+        loading="eager"
         draggable={false}
         onContextMenu={(event) => event.preventDefault()}
         className="hero-portrait-img"
@@ -219,18 +219,18 @@ export function Hero() {
         </div>
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 640px) {
           section#hero .hero-portrait { margin-top: 12px; justify-self: center; }
           section#hero [style*="grid-template-columns"] {
             grid-template-columns: 1fr !important;
           }
-          section#hero [style*="border-right: 1px solid"] {
+          section#hero [style*="border-right: 1px solid"], section#hero [style*="border-right:1px solid"] {
             border-right: none !important;
             border-bottom: 1px solid var(--m-border) !important;
             padding-right: 0 !important;
           }
-          section#hero [style*="padding: 32px 0"] {
+          section#hero [style*="padding: 32px 0"], section#hero [style*="padding:32px 0"] {
             padding-left: 0 !important;
           }
         }
@@ -258,7 +258,7 @@ export function Hero() {
         @media (max-width: 640px) {
           .hero-portrait-img { width: 220px; height: 280px; }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }

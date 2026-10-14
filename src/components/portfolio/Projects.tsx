@@ -154,14 +154,14 @@ export function Projects() {
 
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 900px) {
           #projects [style*="repeat(3, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 560px) {
           #projects [style*="repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }

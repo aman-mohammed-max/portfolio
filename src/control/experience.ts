@@ -11,7 +11,7 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     title: "Founder / CEO",
-    description: "Towilps — independent fashion brand (early stage).",
+    description: "Towlips — independent fashion brand (early stage).",
     period: "Ongoing",
     location: "Remote",
     tags: ["Fashion", "Ecommerce", "Systems"],
