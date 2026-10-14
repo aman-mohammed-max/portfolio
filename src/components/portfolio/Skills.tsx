@@ -103,14 +103,14 @@ export function Skills() {
 
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 900px) {
           #skills [style*="repeat(4, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 500px) {
           #skills [style*="repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }
