@@ -225,12 +225,12 @@ export function Hero() {
           section#hero [style*="grid-template-columns"] {
             grid-template-columns: 1fr !important;
           }
-          section#hero [style*="border-right: 1px solid"] {
+          section#hero [style*="border-right: 1px solid"], section#hero [style*="border-right:1px solid"] {
             border-right: none !important;
             border-bottom: 1px solid var(--m-border) !important;
             padding-right: 0 !important;
           }
-          section#hero [style*="padding: 32px 0"] {
+          section#hero [style*="padding: 32px 0"], section#hero [style*="padding:32px 0"] {
             padding-left: 0 !important;
           }
         }

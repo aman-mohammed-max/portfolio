@@ -144,8 +144,8 @@ export function About() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 700px) {
-          #about [style*="grid-template-columns: 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
-          #about [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+          #about [style*="grid-template-columns: 1fr 1fr 1fr"], #about [style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+          #about [style*="grid-template-columns: 1fr 1fr"], #about [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
         }
       ` }} />
     </section>

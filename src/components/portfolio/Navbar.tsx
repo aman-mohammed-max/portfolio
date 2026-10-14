@@ -26,7 +26,7 @@ export function Navbar() {
           if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { threshold: 0.4 }
+      { rootMargin: "-50% 0px -50% 0px" }
     );
     document.querySelectorAll("section[id]").forEach((s) => observer.observe(s));
     return () => observer.disconnect();

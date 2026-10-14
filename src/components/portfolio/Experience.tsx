@@ -91,7 +91,7 @@ export function Experience() {
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 640px) {
           #experience [style*="240px 1fr"] { grid-template-columns: 1fr !important; }
-          #experience [style*="border-right: 1px solid"] { border-right: none !important; border-bottom: 1px solid var(--m-border) !important; }
+          #experience [style*="border-right: 1px solid"], #experience [style*="border-right:1px solid"] { border-right: none !important; border-bottom: 1px solid var(--m-border) !important; }
         }
       ` }} />
     </section>
