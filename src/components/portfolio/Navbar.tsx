@@ -26,7 +26,7 @@ export function Navbar() {
           if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { threshold: 0.4 }
+      { rootMargin: "-50% 0px -50% 0px" }
     );
     document.querySelectorAll("section[id]").forEach((s) => observer.observe(s));
     return () => observer.disconnect();
@@ -70,7 +70,7 @@ export function Navbar() {
       >
         {/* Left: logo + breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <img src={logoSrc} alt="Logo" style={{ width: 14, height: 14, filter: "invert(1)", opacity: 0.7 }} />
+          <img src={logoSrc.src} alt="Logo" style={{ width: 14, height: 14, filter: "invert(1)", opacity: 0.7 }} />
           <span style={{ color: "var(--m-fg-muted)", fontSize: 13 }}>Aman</span>
           <span style={{ color: "var(--m-border-strong)", fontSize: 13 }}>/</span>
           <span style={{ color: "var(--m-fg-base)", fontSize: 13, fontWeight: 500 }}>Portfolio</span>
@@ -175,7 +175,7 @@ export function Navbar() {
         </div>
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 700px) {
           .hidden-mobile { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
@@ -191,7 +191,7 @@ export function Navbar() {
             display: none !important;
           }
         }
-      `}</style>
+      ` }} />
 
       {open && (
         <div

@@ -12,15 +12,15 @@ import { Footer } from "../components/portfolio/Footer";
 ---
 <Base>
   <div style="min-height: 100vh; background: var(--m-bg-subtle);">
-    <Navbar client:only="react" />
+    <Navbar client:load />
     <main>
-      <Hero client:only="react" />
-      <About client:only="react" />
-      <Skills client:only="react" />
-      <Projects client:only="react" />
-      <Experience client:only="react" />
-      <Contact client:only="react" />
+      <Hero client:load />
+      <About />
+      <Skills client:visible />
+      <Projects client:visible />
+      <Experience />
+      <Contact client:visible />
     </main>
-    <Footer client:only="react" />
+    <Footer client:visible />
   </div>
 </Base>
